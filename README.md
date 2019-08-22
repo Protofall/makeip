@@ -23,3 +23,10 @@ On Unix:
 On Windows:
 `cl makeip.c`
 
+
+Running
+-------
+
+`./makeip [IP_PATH] [INPUT FILE]`
+or
+`./makeip [IP_PATH] [INPUT_PARAM_1] [INPUT_PARAM_2] ... [INPUT_PARAM_N]`
