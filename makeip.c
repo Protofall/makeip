@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+//For exec
+#include <unistd.h>
 
 #define NUM_FIELDS 11
 
@@ -70,8 +72,18 @@ void trim(char *str){
 }
 
 //Can load up a png source file and add it as a logo
-int add_logo(char *png, char *ip){
-    return 0;
+int add_logo(char *png_name, char *ip_path){
+  //Get the length of the two strings
+  png_name_length = strlen(png_name);
+  ip_path_length = strlen(ip_path);
+
+  char *args[]={"./EXEC", NULL}; 
+
+  //Note when we exec all memory used is returned so we won't
+    //Need to worry about free-ing
+  execvp(args[0],args);
+
+  return 0;
 }
 
 //Reads your config file
@@ -187,6 +199,10 @@ void makeip(char *ip_tmpl, char *in, char *out){
     exit(1);
   }
   fclose(fh);
+
+  add_logo("test.png", argv[2]);
+
+  return;
 }
 
 int main(int argc, char *argv[]){
