@@ -1,0 +1,3 @@
+[submodule "logotools"]
+	path = logotools
+	url = git@github.com:Protofall/logotools.git
